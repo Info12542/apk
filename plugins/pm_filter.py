@@ -127,7 +127,7 @@ async def advantage_spoll_choker(bot, query):
     if not movies:
         return await query.answer("Sweetie you are clicking on an old button which has expired😒.", show_alert=True)
     movie = movies[(int(movie_))]
-    await query.answer('Sweetie, I am checking for that Movie on my database...⏳')
+    await query.answer('Sweetie, I am checking for that Apk File on my database...⏳')
     k = await manual_filters(bot, query.message, text=movie)
     if k == False:
         files, offset, total_results = await get_search_results(movie, offset=0, filter=True)
@@ -135,7 +135,7 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit('Sorry Sweetheart, that Movie you are looking for, is not on my DataBase. Use @TylerGroupRequests to request for it. please make sure you follow the request format there or my owner will skip your request. Thank youuu 🥰')
+            k = await query.message.edit('Sorry Sweetheart, that Apk file you are looking for, is not on my DataBase. Cross check your spellings..')
             await asyncio.sleep(10)
             await k.delete()
 
@@ -366,7 +366,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 )
                 await query.answer('My love check your private message, I have sent you the file!!🥰🤝', show_alert=True)
         except UserIsBlocked:
-            await query.answer('Unblock the bot mahn !', show_alert=True)
+            await query.answer('Please Unblock the bot!', show_alert=True)
         except PeerIdInvalid:
             await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
         except Exception as e:
@@ -407,7 +407,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
         ], [
             InlineKeyboardButton('Search Here 🔍', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('Updates Channel🍿🎬', url='https://t.me/TylerMoviesEmpire')
+            InlineKeyboardButton('Updates Channel', url='https://t.me/TylerMoviesEmpire')
         ], [
             InlineKeyboardButton('Help ⚙', callback_data='help'),
             InlineKeyboardButton('My Dev 🧑‍💻', callback_data='owner')
@@ -740,7 +740,7 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = await msg.reply("Sweetie, I couldn't find any movie with that name😫.")
+        k = await msg.reply("Sweetie, I couldn't find any apk file with that name😫.")
         await asyncio.sleep(10)
         await k.delete()
         return
@@ -769,7 +769,7 @@ async def advantage_spell_chok(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
-        k = await msg.reply("My love, I couldn't find any movie related to that. Please check your spellings...")
+        k = await msg.reply("My love, I couldn't find any apk file related to that search. Please check your spellings...")
         await asyncio.sleep(15)
         await k.delete()
         return
@@ -781,7 +781,7 @@ async def advantage_spell_chok(msg):
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    await msg.reply("Sweetie, I couldn't find any movie related to that\nDid you mean any one of these?",
+    await msg.reply("Sweetie, I couldn't find any apk file related to that\nDid you mean any one of these?",
                     reply_markup=InlineKeyboardMarkup(btn))
 
 
