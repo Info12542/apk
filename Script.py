@@ -3,7 +3,7 @@ class script(object):
     
 <b>Sweetheart, My Name Is <a href=https://t.me/{}>{}</a>. I'm a Powerful Apk Search Bot.</b>
 
-<b>You Can Use Me in your Apk search Group.... Its Easy To Use Me; Just Add Me To Your Group As Admin, Thats All, i will Provide Tons of Apk files..😍</b>"""
+<b>You Can Use Me in your Apk search Group.... Its Easy To Use Me; Just Add Me To Your Group As Admin, Thats All, i will Provide Tons of Modded APK Files..😍</b>"""
     HELP_TXT = """𝙷𝙴𝚈 {}
 
 <b>○ DONT SPAM ME...🤒</b>
